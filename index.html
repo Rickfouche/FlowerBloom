@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Neon AR Cat Loop</title>
+    <title>Flower Bloom AR</title>
 
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -57,7 +57,7 @@
     <!-- AR Experience -->
     <div class="ar-scene-container">
       <a-scene
-        mindar-image="imageTargetSrc: https://rickfouche.github.io/Beadedwoman-/targets/JazzCat.mind;"
+        mindar-image="imageTargetSrc: https://rickfouche.github.io/FlowerBloom/targets/Bloom.mind;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
         vr-mode-ui="enabled: false"
@@ -65,8 +65,8 @@
       >
         <a-assets>
           <video
-            id="catVideo"
-            src="mp4/Catloop.mp4"
+            id="bloomVideo"
+            src="mp4/Bloomloop.mp4"
             preload="auto"
             loop
             muted
@@ -85,8 +85,8 @@
         <!-- Display video on target scan -->
         <a-entity mindar-image-target="targetIndex: 0">
           <a-video
-              scale="1.4 1.4 1.4"
-            src="#catVideo"
+            scale="1.4 1.4 1.4"
+            src="#bloomVideo"
             width="1.5"
             height="2"
             position="0 0 0"
@@ -122,7 +122,7 @@
 
       const target = document.querySelector("[mindar-image-target]");
       const tapCatcher = document.getElementById("tap-catcher");
-      const video = document.getElementById("catVideo");
+      const video = document.getElementById("bloomVideo");
 
       target.addEventListener("targetFound", () => {
         console.log("✅ Target Found — show link + play video");
@@ -144,6 +144,7 @@
     </script>
   </body>
 </html>
+
 
 
 
